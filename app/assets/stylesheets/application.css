@@ -13,3 +13,50 @@
  *= require_tree .
  *= require_self
  */
+
+ @font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Regular.ttf');
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+    --primary-color: #f89223;
+    --neutral-color-1: #8c8e91;
+    --neutral-color-2: #f2f1ee;
+    --accent-color: #6fb43f;
+    --white: #fff;
+    --black: #000;
+    --red: #f00;
+    --font: 'Poppins', sans-serif;
+  }
+  
+  @font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Regular.ttf');
+}
+  
+  body {
+    overflow-y: auto;
+    box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+    background-color: var(--white);
+    font-family: var(--font);
+    transition: background ease-out 1s 0.1s;
+    padding-bottom: 5rem;
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--neutral-color-1);
+    padding: 1rem;
+    text-align: center;
+    color: var(--neutral-color-2);
+    font-size: 0.8rem;
+  }
+  
