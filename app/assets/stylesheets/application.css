@@ -76,3 +76,28 @@ footer {
   color: var(--white);
   text-decoration: none;
 }
+
+.devise-forms {
+  background: var(--white);
+  padding: 1rem;
+}
+
+input:not([type="submit"]):not([type="checkbox"]) {
+  border: 0;
+  border-bottom: solid 1px var(--neutral-color-1);
+  border-radius: 0;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+input[type=email]:focus,input[type=password]:focus {
+  outline: none;
+  box-shadow: none;
+  border-bottom: solid 2px var(--primary-color);
+}
+
+.submit-btn {
+  background: var(--neutral-color-3);
+  color: var(--white);
+}

@@ -10,7 +10,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="vh-100">
     <% if flash.any? %>
         <% flash.each do |type, msg| %>
         <div class="alert alert-<%= type %> text-center">
