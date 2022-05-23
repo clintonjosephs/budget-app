@@ -13,8 +13,8 @@ readURL = (input) => {
       reader.onload = function (e) {
         $('#img_prev')
           .attr('src', e.target.result)
-          .width(70)
-          .height(70);
+          .width(100)
+          .height(100);
       };
 
       reader.readAsDataURL(input.files[0]);

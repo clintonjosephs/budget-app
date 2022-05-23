@@ -9,12 +9,12 @@
         <div class="row">
             <%= form_with model: @category, url: categories_path , :html => { :multipart => true } do |f| %>
                 <div class="col-md-12">
-                    <div class="form-group text-center mb-4" id="img_container">
-                        <%= image_tag("default-avatar.jpg", :size => '70x70', style: "border-radius: 50%; margin-bottom: 1rem;", id: 'img_prev') %>
+                    <div class="form-group text-center mb-4 mt-5" id="img_container">
+                        <%= image_tag("no-category.jpg", :size => '100x100', style: "border-radius: 50%; margin-bottom: 1rem; border: solid 1px;", id: 'img_prev') %>
                         <br />
                         <span class="text-muted">Choose an image (if any)</span>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group pb-2">
                         <%= f.label :name, "Category Name", class: "text-muted" %>
                         <%= f.text_field :name, :class => "form-control", placeholder: 'Type here ..' %>
                     </div>
