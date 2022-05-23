@@ -26,6 +26,28 @@
           <%= image_tag(current_user.image, :size => '120x120', style: "border-radius: 50%;")  if current_user.image.present? %>
           <p class="fs-3 mt-2"> <%= current_user.name %> </p>
       </div>
+      <ul class="mt-5">
+        <li>
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <span>Home</span>
+        </li>
+        <li>
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          <span>Add a new category</span>
+        </li>
+        <li>
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+          <span>Edit Profile</span>
+        </li>
+        <li>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <span>Rate this app</span>
+        </li>
+        <li>
+          <i class="fa fa-sign-out" aria-hidden="true"></i>
+          <span>Sign out</span>
+        </li>
+      </ul>
     <% end %>
   </div>
 </div>
