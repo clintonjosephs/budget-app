@@ -147,3 +147,8 @@ input[type=text]:focus {
 .offcanvas-body ul li i {
   font-size: 1.5rem;
 }
+
+.offcanvas-body ul li a {
+  color: var(--white);
+  text-decoration: none;
+}
