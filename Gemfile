@@ -30,6 +30,9 @@ gem 'stimulus-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
+# google cloud storage
+gem "google-cloud-storage", "~> 1.8", require: false
+
 # jquery
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 

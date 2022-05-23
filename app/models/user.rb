@@ -13,5 +13,6 @@ class User < ApplicationRecord
   # validations
   validate :image_type
   validate :image_size
-  validates :name, presence: true, length: { maximum: 200 }
+  validates :name, presence: true
+  validates_length_of :name, maximum: 200
 end
