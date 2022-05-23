@@ -1,2 +1,4 @@
+<%= render partial: 'shared/topbar', locals: { page_name: 'CATEGORIES', path_to_text: '', path_to: '' } %>
+
 <h1>Categories</h1>
 <%= button_to '<i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out'.html_safe, destroy_user_session_path, method: :delete, :"data-turbolinks" => false, class: "nav-link link-btn" %>
