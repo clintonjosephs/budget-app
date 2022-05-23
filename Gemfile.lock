@@ -291,7 +291,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
   bullet
-  cancancan (~> 1.9)
+  cancancan
   capybara
   debug
   devise

@@ -49,7 +49,7 @@ gem 'bootsnap', require: false
 gem 'devise'
 
 # cancancan authorization gem
-gem 'cancancan', '~> 1.9'
+gem 'cancancan'
 
 # asser_template has been extracted to a gem
 gem 'rails-controller-testing'
