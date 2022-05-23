@@ -25,10 +25,11 @@
 }
 
 :root {
-  --primary-color: #f89223;
-  --neutral-color-1: #8c8e91;
-  --neutral-color-2: #f2f1ee;
-  --accent-color: #6fb43f;
+  --primary-color: #3778c2;
+  --neutral-color-1: #434b54;
+  --neutral-color-2: #878a8f;
+  --neutral-color-3: #989da3;
+  --accent-color: #5fb523;
   --white: #fff;
   --black: #000;
   --red: #f00;
@@ -57,6 +58,6 @@ footer {
   background-color: var(--neutral-color-1);
   padding: 1rem;
   text-align: center;
-  color: var(--neutral-color-2);
+  color: var(--white);
   font-size: 0.8rem;
 }
