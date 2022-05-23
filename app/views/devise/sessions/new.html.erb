@@ -1,4 +1,4 @@
-<h2>Log in</h2>
+<%= render partial: 'devise/shared/devise_top_nav', locals: { page_name: 'LOGIN', path_to_text: 'Sign up', path_to: new_user_registration_path, path_back: '#' } %>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">

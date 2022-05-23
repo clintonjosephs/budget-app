@@ -29,6 +29,7 @@
   --neutral-color-1: #434b54;
   --neutral-color-2: #878a8f;
   --neutral-color-3: #989da3;
+  --accent-color-2: #f5f6f8;
   --accent-color: #5fb523;
   --white: #fff;
   --black: #000;
@@ -44,10 +45,11 @@
 body {
   overflow-y: auto;
   box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
-  background-color: var(--white);
+  background-color: var(--accent-color-2);
   font-family: var(--font);
   transition: background ease-out 1s 0.1s;
   padding-bottom: 5rem;
+  border: solid 1px var(--black)
 }
 
 footer {
@@ -60,4 +62,17 @@ footer {
   text-align: center;
   color: var(--white);
   font-size: 0.8rem;
+}
+
+.usermgt {
+  background: var(--primary-color);
+  color: var(--white);
+  height: 3rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.usermgt a {
+  color: var(--white);
+  text-decoration: none;
 }

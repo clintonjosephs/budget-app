@@ -9,7 +9,7 @@ class Category < ApplicationRecord
   # validations
   validates :name, presence: true, uniqueness: { scope: :user_id }
   validates :user_id, presence: true
-  validates :image_type
-  validates :image_size
+  validate :image_type
+  validate :image_size
  
 end

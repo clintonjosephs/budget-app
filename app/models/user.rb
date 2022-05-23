@@ -6,12 +6,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   # relationships
-  has_one_attached :image
+  has_one_attached :image, dependent: :destroy
   has_many :categories, dependent: :destroy
   has_many :expenses, dependent: :destroy
 
   # validations
-  validates :name, presence: true
-  validates :image_type
-  validates :image_size
+  validate :image_type
+  validate :image_size
 end
