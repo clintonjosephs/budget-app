@@ -91,7 +91,9 @@ input:not([type="submit"]):not([type="checkbox"]) {
   width: 100%;
 }
 
-input[type=email]:focus,input[type=password]:focus {
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=text]:focus {
   outline: none;
   box-shadow: none;
   border-bottom: solid 2px var(--primary-color);
