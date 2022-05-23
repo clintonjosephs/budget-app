@@ -31,7 +31,7 @@ gem 'stimulus-rails'
 gem 'jbuilder'
 
 # google cloud storage
-gem "google-cloud-storage", "~> 1.8", require: false
+gem 'google-cloud-storage', '~> 1.8', require: false
 
 # jquery
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'

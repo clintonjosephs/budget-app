@@ -3,7 +3,7 @@ class Category < ApplicationRecord
 
   # relationships
   belongs_to :user
-  has_one_attached :image, :dependent => :destroy
+  has_one_attached :image, dependent: :destroy
   # has_many :expenses through: :expense_categories, dependent: :destroy
 
   # validations
@@ -11,7 +11,7 @@ class Category < ApplicationRecord
   validates :user_id, presence: true
   validate :image_type
   validate :image_size
-  
+
   def new
     @category = Category.new
   end
