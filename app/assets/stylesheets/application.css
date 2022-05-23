@@ -154,7 +154,7 @@ input[type=text]:focus {
   text-decoration: none;
 }
 
-.alert {
+.alert-alert {
   background-color: #f8d7da;
   color: #9d595f;
   padding-bottom: 1rem;
