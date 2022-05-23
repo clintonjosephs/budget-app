@@ -50,7 +50,8 @@ body {
   font-family: var(--font);
   transition: background ease-out 1s 0.1s;
   padding-bottom: 5rem;
-  border: solid 1px var(--black)
+  border: solid 1px var(--black);
+  height: 100vh;
 }
 
 footer {
@@ -158,4 +159,25 @@ input[type=text]:focus {
   color: #9d595f;
   padding-bottom: 1rem;
   margin-bottom: 0;
+}
+
+.section-heading {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+}
+
+.section-content {
+  display: flex;
+  background-color: var(--white);
+  height: 40vh;
+  align-items: center;
+  justify-content: center;
 }

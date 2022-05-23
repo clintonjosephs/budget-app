@@ -11,5 +11,8 @@ class Category < ApplicationRecord
   validates :user_id, presence: true
   validate :image_type
   validate :image_size
- 
+  
+  def new
+    @category = Category.new
+  end
 end

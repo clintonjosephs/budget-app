@@ -1,9 +1,9 @@
 
 let image_div = document.getElementById('img_container');
-let user_avatar = document.getElementById('user_avatar');
+let image_picker = document.getElementById('image_picker');
 
 image_div.addEventListener('click', () => {
-    user_avatar.click();
+  image_picker.click();
 });
 
 readURL = (input) => {
