@@ -152,3 +152,10 @@ input[type=text]:focus {
   color: var(--white);
   text-decoration: none;
 }
+
+.alert {
+  background-color: #f8d7da;
+  color: #9d595f;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+}
