@@ -189,14 +189,15 @@ input[type=text]:focus {
 }
 
 .watch-board {
-  height: 10vh;
+  height: 12vh;
   width: 100%;
   background-color: var(--white);
   margin-bottom: 0.5rem;
+  font-size: large;
 }
 
 .categories-wrapper {
-  height: 70vh;
+  height: 68vh;
   width: 100%;
   overflow-y: auto;
 }

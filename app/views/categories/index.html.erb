@@ -13,6 +13,13 @@
         </span>
         <span style="float:right"><b><%= number_to_currency(@total_amount) %></b></span>
     </div>
+    <div class="item1 mb-1">
+        <span class="text-muted">
+            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            Top Category: 
+        </span>
+        <span style="float:right"><b><%= @highest_category.name %></b></span>
+    </div>
 </section>
 <section class="categories-wrapper">
     <ul>
@@ -29,6 +36,6 @@
 </section>
 <%= link_to new_category_path, class: 'foot-button' do %>
     <div class="btn-build">
-        Add Category
+        New Category
     </div>
 <% end %>

@@ -4,11 +4,11 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.with_attached_image.find_by_sql("SELECT categories.*, 
-      SUM(expenses.amount) as total_amount 
+    COALESCE(SUM(expenses.amount), 0) as total_amount 
       from categories 
       LEFT JOIN categories_expenses ON categories.id = categories_expenses.category_id 
       LEFT JOIN expenses on categories_expenses.expense_id = expenses.id 
-      WHERE categories.user_id = #{current_user.id} GROUP BY categories.id");
+      WHERE categories.user_id = #{current_user.id} GROUP BY categories.id ORDER BY categories.name ASC");
 
      @total_amount = @categories.map { |category| category.total_amount }.compact.sum
 
@@ -22,6 +22,8 @@ class CategoriesController < ApplicationController
                         .sum(:amount)
         end
      end
+
+     @highest_category = @categories.select(&:name).max_by(&:total_amount)
     end
 
   def new
