@@ -2,32 +2,27 @@
     <div class="item1 mb-1">
         <span class="text-muted">
             <i class="fa fa-credit-card" aria-hidden="true"></i>
-            Current Month:
+            This Month:
         </span> 
-        <span style="float:right"><b><%= number_to_currency(0.00) %></b></span>
+        <span style="float:right"><b><%= number_to_currency(@this_month) %></b></span>
     </div>
     <div class="item1 mb-1">
         <span class="text-muted">
             <i class="fa fa-globe" aria-hidden="true"></i>
-            Annual Expenses: 
+            All time:
         </span>
-        <span style="float:right"><b><%= number_to_currency(0.00) %></b></span>
-    </div>
-    <div class="item1 mb-1">
-        <span class="text-muted">
-            <i class="fa fa-arrow-up" aria-hidden="true"></i>
-            Top Month: 
-        </span>
-        <span style="float:right"><b><%= number_to_currency(0.00) %></b></span>
+        <span style="float:right"><b><%= number_to_currency(@total_amount) %></b></span>
     </div>
 </section>
 <section class="categories-wrapper">
     <ul>
         <% @categories.each do |category| %>
             <li class="shadow">
-                <%= image_tag(category.image, size: '80x80', style: 'border-radius: 10px') %>
+                <%= image_tag(category.image, size: '80x80', style: 'border-radius: 10px') if category.image.present? %>
+                <%= image_tag("no-category.jpg", size: '80x80', style: 'border-radius: 10px') if !category.image.present? %>
                 <span class="text-muted cat_name"><%= category.name %></span>
-                <span style="float:right; font-weight: bold;"><%= number_to_currency(category.total_amount) %></span>
+                <span style="float:right; font-weight: bold;"><%= number_to_currency(category.total_amount) if category.total_amount.present? %></span>
+                <span style="float:right; font-weight: bold;"><%= number_to_currency(0) if !category.total_amount.present? %></span>
             </li>
         <% end %>
     </ul>

@@ -10,9 +10,19 @@ class CategoriesController < ApplicationController
       LEFT JOIN expenses on categories_expenses.expense_id = expenses.id 
       WHERE categories.user_id = #{current_user.id} GROUP BY categories.id");
 
-    # @current_month_amount = @categories.where('extract(month from date_of_expense) = ?', Time.now.month).sum(:total_amount)
-    # @highest_month = @categories.where('extract(month from date_of_expense) = ?', Time.now.month).order('total_amount DESC').first
-  end
+     @total_amount = @categories.map { |category| category.total_amount }.compact.sum
+
+     @this_month = 0
+
+     @categories.each do |category|
+        if category.expenses.length > 0
+          @this_month += category.expenses
+                        .where('date_of_expense >= ?', Date.today.beginning_of_month)
+                        .where('date_of_expense <= ?', Date.today.end_of_month)
+                        .sum(:amount)
+        end
+     end
+    end
 
   def new
     @category = Category.new
