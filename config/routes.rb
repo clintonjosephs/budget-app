@@ -11,9 +11,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :categories do
-    resources :expenses, only: [:new, :create, :show]
-  end
+  resources :categories
+  resources :expenses, only: [:new, :create]
 
   # Defines the root path route ("/")
   # root "articles#index"

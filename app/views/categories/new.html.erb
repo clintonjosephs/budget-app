@@ -5,10 +5,8 @@
             New category
         </span>
     </div>
-    <div class="container section-content">
-        <div class="row">
-            <%= form_with model: @category, url: categories_path , :html => { :multipart => true } do |f| %>
-                <div class="col-md-12">
+    <div class="section-content container">
+            <%= form_with model: @category, url: categories_path, class: 'row', :html => { :multipart => true } do |f| %>
                     <div class="form-group text-center mb-4 mt-5" id="img_container">
                         <%= image_tag("no-category.jpg", :size => '100x100', style: "border-radius: 50%; margin-bottom: 1rem; border: solid 1px;", id: 'img_prev') %>
                         <br />
@@ -22,9 +20,7 @@
                         <%= f.submit "Create", :class => "btn submit-btn form-control" %>
                     </div>
                     <%= f.file_field :image, id: 'image_picker', onchange: "readURL(this);", style: 'visibility:hidden;' %>
-                </div>
             <% end %>
-        </div>
     </div>
 </section>
 <%= javascript_include_tag 'form_image' %>

@@ -102,7 +102,7 @@ input[type=text]:focus {
 }
 
 .submit-btn {
-  background: var(--neutral-color-3);
+  background: var(--accent-color);
   color: var(--white);
 }
 
@@ -177,7 +177,7 @@ input[type=text]:focus {
 .section-content {
   display: flex;
   background-color: var(--white);
-  height: 40vh;
+  height: 50vh;
   align-items: center;
   justify-content: center;
 }
