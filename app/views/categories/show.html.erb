@@ -18,7 +18,8 @@
                         <i class="fa fa-trash trash shadow" aria-hidden="true"></i>
                     </a>
                     <div class="expense">
-                        <%= expense.name %>
+                        <%= expense.name %><br />
+                        <span class="text-muted fs-6"><%= expense.date_of_expense.strftime("%B %d, %Y") %> </span>
                         <span style="float:right; font-weight: bold;">
                             <%= number_to_currency(expense.amount) %>
                         </span>
