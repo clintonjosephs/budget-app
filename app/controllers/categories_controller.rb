@@ -3,12 +3,7 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @categories = Category.with_attached_image.find_by_sql("SELECT categories.*, 
-    COALESCE(SUM(expenses.amount), 0) as total_amount 
-      from categories 
-      LEFT JOIN categories_expenses ON categories.id = categories_expenses.category_id 
-      LEFT JOIN expenses on categories_expenses.expense_id = expenses.id 
-      WHERE categories.user_id = #{current_user.id} GROUP BY categories.id ORDER BY categories.name ASC");
+    @categories = setup_categories
 
      @total_amount = @categories.map { |category| category.total_amount }.compact.sum
 
@@ -31,6 +26,14 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    data =  Category.with_attached_image.find_by_sql("SELECT categories.*, 
+    COALESCE(SUM(expenses.amount), 0) as total_amount 
+      from categories 
+      LEFT JOIN categories_expenses ON categories.id = categories_expenses.category_id 
+      LEFT JOIN expenses on categories_expenses.expense_id = expenses.id 
+      WHERE categories.user_id = #{current_user.id} AND categories.id = #{params[:id]} GROUP BY categories.id ORDER BY categories.name ASC");
+      @category = data[0]
+      @expenses = @category.expenses.order(:date_of_expense)
   end
 
   def create
@@ -58,4 +61,15 @@ class CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(:name, :image)
   end
+
+  def setup_categories
+    Category.with_attached_image.find_by_sql("SELECT categories.*, 
+      COALESCE(SUM(expenses.amount), 0) as total_amount 
+        from categories 
+        LEFT JOIN categories_expenses ON categories.id = categories_expenses.category_id 
+        LEFT JOIN expenses on categories_expenses.expense_id = expenses.id 
+        WHERE categories.user_id = #{current_user.id} GROUP BY categories.id ORDER BY categories.name ASC");
+  end
+
+  private :category_params, :setup_categories
 end

@@ -20,7 +20,7 @@
            <%= f.number_field :amount, class: 'form-control', placeholder: 'Amount (to the nearest dollar)' %>
         </div>
         <div class="form-group pb-2">
-            <%= f.label :categories, "Expense category(ies)", class: "text-muted" %>
+            <%= f.label :categories, "Expense category", class: "text-muted" %>
             <%= f.select :categories, @categories.map { |category| [category.name, category.id] }, {:required => true, include_hidden: false}, {:class => 'form-control', :multiple => false} %>
         </div>
         <div class="form-group">
