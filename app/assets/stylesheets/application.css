@@ -239,6 +239,14 @@ input[type=text]:focus {
   position: relative;
 }
 
+.move-show {
+  text-decoration: none;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
 .cat_name {
   flex: 3;
   margin-left: 0.8rem;
