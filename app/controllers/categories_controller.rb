@@ -33,7 +33,7 @@ class CategoriesController < ApplicationController
       LEFT JOIN expenses on categories_expenses.expense_id = expenses.id 
       WHERE categories.user_id = #{current_user.id} AND categories.id = #{params[:id]} GROUP BY categories.id ORDER BY categories.name ASC");
       @category = data[0]
-      @expenses = @category.expenses.order(:date_of_expense)
+      @expenses = @category.expenses.order(created_at: :desc)
   end
 
   def create
