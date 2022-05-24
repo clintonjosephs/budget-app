@@ -21,6 +21,16 @@ class ExpensesController < ApplicationController
     end
   end
 
+  def destroy
+    expense_to_delete = Expense.find(params[:id])
+    if expense_to_delete.destroy
+      success("Expense (#{expense_to_delete.name}) was successfully deleted.", redirect: true)
+    else
+      failure("Expense (#{expense_to_delete.name}) was not deleted because: ", @expense)
+    end
+    redirect_back(fallback_location: authenticated_root_path)
+  end
+
   def expense_params
     params.require(:expense).permit(:name, :amount, :date_of_expense, :categories => [])
   end

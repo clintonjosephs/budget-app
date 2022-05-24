@@ -1,13 +1,17 @@
 <section class="watch-board">
     <div class="category-watch">
         <div class="category-details">
+            <div>
             <%= image_tag(@category.image, size: '50x50', style: 'border-radius: 10px') if @category.image.present? %>
             <%= image_tag("no-category.jpg", size: '50x50', style: 'border-radius: 10px') if !@category.image.present? %>
             <span style="margin-left:0.5rem;"><%= @category.name %></span> 
+            </div>
+            <div>
+            <span class="m-1" style="float:right; font-weight: bold;">
+            <%= number_to_currency(@category.total_amount) %></span>
+            </div>
         </div>
-        <span class="m-1" style="float:right; font-weight: bold;">
-        <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
-        <%= number_to_currency(@category.total_amount) %></span>
+       
     </div>
 </section>
 <section class="list-wrapper">

@@ -21,7 +21,7 @@
         </div>
         <div class="form-group pb-2">
             <%= f.label :categories, "Expense category", class: "text-muted" %>
-            <%= f.select :categories, @categories.map { |category| [category.name, category.id] }, {:required => true, include_hidden: false}, {:class => 'form-control', :multiple => false} %>
+            <%= f.select :categories, @categories.map { |category| [category.name, category.id] }, {:required => true, include_hidden: false, include_blank: '- choose category -'}, {:class => 'form-control', :multiple => false} %>
         </div>
         <div class="form-group">
             <%= f.submit "Add", :class => "btn submit-btn form-control" %>

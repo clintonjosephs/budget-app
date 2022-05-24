@@ -189,7 +189,6 @@ input[type=text]:focus {
 }
 
 .watch-board {
-  height: 12vh;
   width: 100%;
   background-color: var(--white);
   margin-bottom: 0.5rem;
@@ -277,6 +276,7 @@ input[type=text]:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   padding: 0.5rem;
 }
 
