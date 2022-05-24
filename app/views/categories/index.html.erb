@@ -1,2 +1,39 @@
-<h1>Categories</h1>
-<%= button_to '<i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out'.html_safe, destroy_user_session_path, method: :delete, :"data-turbolinks" => false, class: "nav-link link-btn" %>
+<section class="watch-board shadow p-2">
+    <div class="item1 mb-1">
+        <span class="text-muted">
+            <i class="fa fa-credit-card" aria-hidden="true"></i>
+            Current Month:
+        </span> 
+        <span style="float:right"><b><%= number_to_currency(0.00) %></b></span>
+    </div>
+    <div class="item1 mb-1">
+        <span class="text-muted">
+            <i class="fa fa-globe" aria-hidden="true"></i>
+            Annual Expenses: 
+        </span>
+        <span style="float:right"><b><%= number_to_currency(0.00) %></b></span>
+    </div>
+    <div class="item1 mb-1">
+        <span class="text-muted">
+            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            Top Month: 
+        </span>
+        <span style="float:right"><b><%= number_to_currency(0.00) %></b></span>
+    </div>
+</section>
+<section class="categories-wrapper">
+    <ul>
+        <% @categories.each do |category| %>
+            <li class="shadow">
+                <%= image_tag(category.image, size: '80x80', style: 'border-radius: 10px') %>
+                <span class="text-muted cat_name"><%= category.name %></span>
+                <span style="float:right; font-weight: bold;"><%= number_to_currency(category.total_amount) %></span>
+            </li>
+        <% end %>
+    </ul>
+</section>
+<%= link_to new_category_path, class: 'foot-button' do %>
+    <div class="btn-build">
+        Add Category
+    </div>
+<% end %>

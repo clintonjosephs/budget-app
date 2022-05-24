@@ -181,3 +181,63 @@ input[type=text]:focus {
   align-items: center;
   justify-content: center;
 }
+
+.shadow {
+  -moz-box-shadow: 0 0 3px #ccc !important;
+  -webkit-box-shadow: 0 0 3px #ccc !important;
+  box-shadow: 0 0 35px #ccc !important;
+}
+
+.watch-board {
+  height: 10vh;
+  width: 100%;
+  background-color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.categories-wrapper {
+  height: 70vh;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.foot-button {
+  background-color: var(--accent-color);
+  height: 15vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.btn-build {
+  border: solid 1px var(--white);
+  color: var(--white);
+  font-size: 1.5rem;
+  width: 90%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categories-wrapper ul {
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+}
+
+.categories-wrapper ul li {
+  padding: 0.5rem;
+  background: var(--white);
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+}
+
+.cat_name {
+  flex: 3;
+  margin-left: 0.8rem;
+}
