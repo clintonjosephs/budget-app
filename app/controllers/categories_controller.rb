@@ -42,6 +42,16 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @category = Category.find(params[:id])
+    if @category.destroy
+      success("Category (#{@category.name}) was successfully deleted.", redirect: true)
+    else
+      failure("Category (#{@category.name}) was not deleted because: ", @category)
+    end
+    redirect_to authenticated_root_path
+  end
+
   def category_params
     params.require(:category).permit(:name, :image)
   end

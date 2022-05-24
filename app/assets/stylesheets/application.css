@@ -236,9 +236,22 @@ input[type=text]:focus {
   margin-bottom: 0.7rem;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .cat_name {
   flex: 3;
   margin-left: 0.8rem;
+}
+
+.delete-item {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-size: 1.3rem;
+  width: 1.2rem;
+  color: darkred;
 }

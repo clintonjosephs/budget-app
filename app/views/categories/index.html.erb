@@ -25,6 +25,9 @@
     <ul>
         <% @categories.each do |category| %>
             <li class="shadow">
+                <a href="<%= category_path(category.id) %>" data-confirm="Are you sure you want to delete <%= category.name %>?" data-method="delete" class='delete-item'>
+                    <i class="fa fa-trash trash shadow" aria-hidden="true"></i>
+                </a>
                 <%= image_tag(category.image, size: '80x80', style: 'border-radius: 10px') if category.image.present? %>
                 <%= image_tag("no-category.jpg", size: '80x80', style: 'border-radius: 10px') if !category.image.present? %>
                 <span class="text-muted cat_name"><%= category.name %></span>
