@@ -9,14 +9,12 @@ class ExpensesController < ApplicationController
 
   def create
     @expense = Expense.new(expense_params)
-    params[:expense][:categories].each do |category|
-      @expense.categories << Category.find(category)
-    end
+    @expense.categories << Category.find(params[:expense][:categories].to_i)
     @categories = Category.all
     @expense.user_id = current_user.id
     if @expense.save
       success('New expense was successfully created.', redirect: true)
-      redirect_to new_expense_path
+      redirect_to category_path(params[:expense][:categories].to_i)
     else
       failure('Expense was not created because: ', @expense)
       render :new
@@ -24,7 +22,7 @@ class ExpensesController < ApplicationController
   end
 
   def expense_params
-    params.require(:expense).permit(:name, :amount, :date_of_expense, :categories)
+    params.require(:expense).permit(:name, :amount, :date_of_expense, :categories => [])
   end
 
   private :expense_params
