@@ -7,7 +7,7 @@
 The Budget App is a mobile-focused web application where you can manage your expenses: you have a list of expenses associated with a category, and this allows you see how much money you have spent on what and on which category. It also shows you which category you spend most on and your total expenses for the current month which helps you make more informed decisions about your finances.
 
 - [Heroku Deploy](https://clinton-budget-app.herokuapp.com/)
-- [Video Presentation]()
+- [Video Presentation](https://www.loom.com/share/e3bae155e0b44751a5ea9edf61aec272)
 
 ## Built With
 
