@@ -25,13 +25,16 @@
 }
 
 :root {
-  --primary-color: #3778c2;
-  --primary-color-dark: #143361;
+  /* --primary-color: #3778c2;
+  --primary-color-dark: #143361; */
+  --primary-color: #2c62ff;
+  --primary-color-dark: #3778c2;
   --neutral-color-1: #434b54;
   --neutral-color-2: #878a8f;
   --neutral-color-3: #989da3;
   --accent-color-2: #f5f6f8;
-  --accent-color: #5fb523;
+  /* --accent-color: #5fb523; */
+  --accent-color: #2bc999;
   --white: #fff;
   --black: #000;
   --red: #f00;
@@ -71,7 +74,8 @@ footer {
   color: var(--white);
   height: 3rem;
   padding: 0.5rem;
-  text-align: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .usermgt a {
@@ -162,8 +166,7 @@ input[type=text]:focus {
 }
 
 .section-heading {
-  background: var(--primary-color);
-  color: var(--white);
+  background: var(--accent-color-2);
   padding: 0;
   margin: 0;
   font-size: 1rem;
@@ -182,25 +185,43 @@ input[type=text]:focus {
   justify-content: center;
 }
 
-.shadow {
-  -moz-box-shadow: 0 0 3px #ccc !important;
-  -webkit-box-shadow: 0 0 3px #ccc !important;
-  box-shadow: 0 0 35px #ccc !important;
+.watch-board {
+  margin: 0.6rem;
+  display: flex;
+  justify-items: space-between;
+  align-items: center;
 }
 
-.watch-board {
-  width: 100%;
-  background-color: var(--white);
-  margin-bottom: 0.5rem;
-  font-size: large;
-  border-bottom: solid 2px var(--accent-color);
+.item {
+  border-radius: 10px;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--white);
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.date-expense {
+  font-size: 0.7rem;
+}
+
+.watch-board-main {
+  margin: 0.2rem 0.6rem 0.6rem 0.6rem;
 }
 
 .list-wrapper {
-  height: 68vh;
+  height: 47vh;
   width: 100%;
   overflow-y: auto;
 }
+
+.expense-height {
+  height: 68vh !important;
+}
+
 
 .foot-button {
   background-color: var(--accent-color);
@@ -237,6 +258,7 @@ input[type=text]:focus {
   display: flex;
   align-items: center;
   position: relative;
+  border-radius: 10px;
 }
 
 .move-show {
@@ -260,8 +282,20 @@ input[type=text]:focus {
   border: none;
   background: transparent;
   font-size: 1.3rem;
-  width: 1.2rem;
-  color: darkred;
+  width: 1.5rem;
+  color: var(--primary-color);
+}
+
+.delete-bucket {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-size: 1.3rem;
+  width: 1.5rem;
+  color: var(--red);
 }
 
 .category-watch {
@@ -269,7 +303,7 @@ input[type=text]:focus {
   margin: 0; 
   height: 100%;
   color: var(--white);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .category-details {
@@ -281,9 +315,44 @@ input[type=text]:focus {
 }
 
 .expense {
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  margin-top: 0.1rem;
   margin-bottom: 0.5rem;
   width: 100%;
+}
+
+.dropdown-menu a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.dropdown-item:active {
+  background: none;
+}
+
+.dashboard {
+  background: var(--white);
+  width: 100%;
+  border-radius: 10px;
+}
+
+.cast {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+}
+
+.topic {
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.topic-expense {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.side {
+  margin-left: 0.8rem;
 }
