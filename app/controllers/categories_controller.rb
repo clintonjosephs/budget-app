@@ -5,35 +5,36 @@ class CategoriesController < ApplicationController
   def index
     @categories = setup_categories
 
-     @total_amount = @categories.map { |category| category.total_amount }.compact.sum
+    @total_amount = @categories.map(&:total_amount).compact.sum
 
-     @this_month = 0
+    @this_month = 0
 
-     @categories.each do |category|
-        if category.expenses.length > 0
-          @this_month += category.expenses
-                        .where('date_of_expense >= ?', Date.today.beginning_of_month)
-                        .where('date_of_expense <= ?', Date.today.end_of_month)
-                        .sum(:amount)
-        end
-     end
+    @categories.each do |category|
+      next unless category.expenses.length.positive?
 
-     @highest_category = @categories.select(&:name).max_by(&:total_amount)
+      @this_month += category.expenses
+        .where('date_of_expense >= ?', Date.today.beginning_of_month)
+        .where('date_of_expense <= ?', Date.today.end_of_month)
+        .sum(:amount)
     end
+
+    @highest_category = @categories.select(&:name).max_by(&:total_amount)
+  end
 
   def new
     @category = Category.new
   end
 
   def show
-    data =  Category.with_attached_image.find_by_sql("SELECT categories.*, 
-    COALESCE(SUM(expenses.amount), 0) as total_amount 
-      from categories 
-      LEFT JOIN categories_expenses ON categories.id = categories_expenses.category_id 
-      LEFT JOIN expenses on categories_expenses.expense_id = expenses.id 
-      WHERE categories.user_id = #{current_user.id} AND categories.id = #{params[:id]} GROUP BY categories.id ORDER BY categories.name ASC");
-      @category = data[0]
-      @expenses = @category.expenses.order(created_at: :desc)
+    data = Category.with_attached_image.find_by_sql("SELECT categories.*,
+    COALESCE(SUM(expenses.amount), 0) as total_amount
+      from categories
+      LEFT JOIN categories_expenses ON categories.id = categories_expenses.category_id
+      LEFT JOIN expenses on categories_expenses.expense_id = expenses.id
+      WHERE categories.user_id = #{current_user.id}
+      AND categories.id = #{params[:id]} GROUP BY categories.id ORDER BY categories.name ASC")
+    @category = data[0]
+    @expenses = @category.expenses.order(created_at: :desc)
   end
 
   def create
@@ -63,12 +64,12 @@ class CategoriesController < ApplicationController
   end
 
   def setup_categories
-    Category.with_attached_image.find_by_sql("SELECT categories.*, 
-      COALESCE(SUM(expenses.amount), 0) as total_amount 
-        from categories 
-        LEFT JOIN categories_expenses ON categories.id = categories_expenses.category_id 
-        LEFT JOIN expenses on categories_expenses.expense_id = expenses.id 
-        WHERE categories.user_id = #{current_user.id} GROUP BY categories.id ORDER BY categories.name ASC");
+    Category.with_attached_image.find_by_sql("SELECT categories.*,
+      COALESCE(SUM(expenses.amount), 0) as total_amount
+        from categories
+        LEFT JOIN categories_expenses ON categories.id = categories_expenses.category_id
+        LEFT JOIN expenses on categories_expenses.expense_id = expenses.id
+        WHERE categories.user_id = #{current_user.id} GROUP BY categories.id ORDER BY categories.name ASC")
   end
 
   private :category_params, :setup_categories

@@ -12,5 +12,4 @@ class Category < ApplicationRecord
   validate :image_type
   validate :image_size
   validates_length_of :name, maximum: 200
-
 end
