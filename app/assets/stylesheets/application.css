@@ -25,10 +25,10 @@
 }
 
 :root {
-  /* --primary-color: #3778c2;
-  --primary-color-dark: #143361; */
-  --primary-color: #2c62ff;
-  --primary-color-dark: #3778c2;
+  --primary-color: #3778c2;
+  --primary-color-dark: #143361;
+  /* --primary-color: #2c62ff;
+  --primary-color-dark: #3778c2; */
   --neutral-color-1: #434b54;
   --neutral-color-2: #878a8f;
   --neutral-color-3: #989da3;
@@ -53,7 +53,6 @@ body {
   font-family: var(--font);
   transition: background ease-out 1s 0.1s;
   padding-bottom: 5rem;
-  border: solid 1px var(--black);
   height: 100vh;
 }
 
@@ -355,4 +354,47 @@ input[type=text]:focus {
 
 .side {
   margin-left: 0.8rem;
+}
+
+.app-logo {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.btn {
+  width: 22rem !important;
+  height: 3.5rem !important;
+  border-radius: none !important;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+}
+
+.login-btn {
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  font-size: 1.2rem;
+}
+
+.login-btn:hover {
+  color: var(--white);
+}
+
+.signup-btn {
+  color: var(--neutral-color-3);
+  font-size: 1.2rem;
+}
+
+.signup-btn:hover {
+  color: var(--neutral-color-3);
 }
