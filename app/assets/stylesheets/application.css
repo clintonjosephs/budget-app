@@ -27,12 +27,14 @@
 :root {
   --primary-color: #3778c2;
   --primary-color-dark: #143361;
+
   /* --primary-color: #2c62ff;
   --primary-color-dark: #3778c2; */
   --neutral-color-1: #434b54;
   --neutral-color-2: #878a8f;
   --neutral-color-3: #989da3;
   --accent-color-2: #f5f6f8;
+
   /* --accent-color: #5fb523; */
   --accent-color: #2bc999;
   --white: #fff;
@@ -152,6 +154,11 @@ input[type=text]:focus {
   font-size: 1.5rem;
 }
 
+.dropdown-menu a {
+  color: var(--black);
+  text-decoration: none;
+}
+
 .offcanvas-body ul li a {
   color: var(--white);
   text-decoration: none;
@@ -187,7 +194,6 @@ input[type=text]:focus {
 .watch-board {
   margin: 0.6rem;
   display: flex;
-  justify-items: space-between;
   align-items: center;
 }
 
@@ -220,7 +226,6 @@ input[type=text]:focus {
 .expense-height {
   height: 68vh !important;
 }
-
 
 .foot-button {
   background-color: var(--accent-color);
@@ -275,8 +280,8 @@ input[type=text]:focus {
 
 .delete-item {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
   cursor: pointer;
   border: none;
   background: transparent;
@@ -287,8 +292,8 @@ input[type=text]:focus {
 
 .delete-bucket {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
   cursor: pointer;
   border: none;
   background: transparent;
@@ -298,8 +303,8 @@ input[type=text]:focus {
 }
 
 .category-watch {
-  background: var(--primary-color); 
-  margin: 0; 
+  background: var(--primary-color);
+  margin: 0;
   height: 100%;
   color: var(--white);
   font-size: 1.2rem;
@@ -320,11 +325,6 @@ input[type=text]:focus {
   width: 100%;
 }
 
-.dropdown-menu a {
-  color: var(--black);
-  text-decoration: none;
-}
-
 .dropdown-item:active {
   background: none;
 }
@@ -339,7 +339,6 @@ input[type=text]:focus {
   display: flex;
   align-items: center;
   flex-direction: row;
-
 }
 
 .topic {
@@ -374,7 +373,6 @@ input[type=text]:focus {
 .btn {
   width: 22rem !important;
   height: 3.5rem !important;
-  border-radius: none !important;
   margin-bottom: 0.5rem;
   padding: 1rem;
 }
