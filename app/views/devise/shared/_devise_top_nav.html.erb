@@ -1,0 +1,15 @@
+<section class="container-fluid usermgt">
+<div class="row px-3">
+  <div class="col-1 mt-1">
+    <%= link_to '<i class="fa fa-arrow-left fs-3 fw-normal float-left" aria-hidden="true"></i>'.html_safe, path_back %>
+  </div>
+  <div class="col-10 mt-1">
+      <h5><%= page_name %></h5>
+  </div>
+  <% if path_to_text != '' %>
+    <div class="col-1 mt-1 mr-1">
+        <%= link_to '<i class="fa fa-user-plus fs-2 fw-normal" aria-hidden="true"></i>'.html_safe, path_to %>
+    </div>
+  <% end %>
+</div>
+</section>

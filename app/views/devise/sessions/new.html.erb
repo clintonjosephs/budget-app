@@ -1,0 +1,36 @@
+<%= render partial: 'devise/shared/devise_top_nav', locals: { page_name: 'LOGIN', path_to_text: 'Sign up', path_to: new_user_registration_path, path_back: '#' } %>
+<section class="container devise-forms">
+  <div class="col-md-6 offset-md-3 col-sm-12">
+    <div class="text-center">
+      <%= image_tag("app-logo.png", :size => '100x100') %>
+    </div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field mb-3">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: 'Email', required: :true %>
+      </div>
+
+      <div class="field mb-3">
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: 'Password', required: :true %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field mb-3">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+
+      <div class="actions">
+        <%= f.submit "Log in", class: 'btn form-control submit-btn' %>
+      </div>
+   </div>
+  <% end %>
+</div>
+</section>
+<div class="mt-2 text-center">
+<%= link_to "Forgot password?", new_user_password_path, class: "small text-muted fs-6" %>
+<p>
+  <a href="#!" class="small text-muted">Terms of use.</a>
+  <a href="#!" class="small text-muted">Privacy policy</a>
+</p>
+</div>

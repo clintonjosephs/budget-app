@@ -1,0 +1,64 @@
+<section class="container devise-forms">
+<div class="text-muted topic side">MANAGE PROFILE</div>
+
+  <div class="col-md-6 offset-md-3 col-sm-12">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="form-group text-center mb-4" id="img_container">
+          <%= image_tag("default-avatar.jpg", :size => '100x100', style: "border-radius: 50%; margin-bottom: 1rem;", id: 'img_prev') %>
+          <br />
+          <span class="text-muted">Change profile picture (if any)</span>
+      </div>
+      <div class="field">
+        <%= f.text_field :name, placeholder: 'full name', autofocus: true, autocomplete: "full name"%>
+      </div>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Change Password
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div class="field pb-2">
+                <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+                <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
+                <% if @minimum_password_length %>
+                    <em><%= @minimum_password_length %> characters minimum</em>
+                <% end %>
+            </div>
+            <div class="field">
+                <%= f.label :password_confirmation %>
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+      <div class="field">
+      <%= f.file_field :image, id: 'image_picker', onchange: "readURL(this);", style: 'visibility:hidden;' %>
+        <%= f.password_field :current_password, placeholder: "current password" %>
+      </div>
+
+      <div class="form-group mt-2">
+          <%= f.submit "Update", class: 'btn btn-warning form-control' %>
+      </div>
+    <% end %>
+
+    <div class="form-group mt-5" style="float:right;">
+    <p><%= button_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, registration_path(resource_name), data: { confirm: "Are you sure, you wish to delete your account?" }, method: :delete, class: 'btn btn-danger' %></p>
+    </div></div>
+</section>
+<%= javascript_include_tag 'form_image' %>

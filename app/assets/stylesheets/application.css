@@ -1,0 +1,398 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('Poppins-Regular.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #3778c2;
+  --primary-color-dark: #143361;
+
+  /* --primary-color: #2c62ff;
+  --primary-color-dark: #3778c2; */
+  --neutral-color-1: #434b54;
+  --neutral-color-2: #878a8f;
+  --neutral-color-3: #989da3;
+  --accent-color-2: #f5f6f8;
+
+  /* --accent-color: #5fb523; */
+  --accent-color: #2bc999;
+  --white: #fff;
+  --black: #000;
+  --red: #f00;
+  --font: 'Poppins', sans-serif;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('Poppins-Regular.ttf');
+}
+
+body {
+  overflow-y: auto;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: var(--accent-color-2);
+  font-family: var(--font);
+  transition: background ease-out 1s 0.1s;
+  padding-bottom: 5rem;
+  height: 100vh;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--neutral-color-1);
+  padding: 1rem;
+  text-align: center;
+  color: var(--white);
+  font-size: 0.8rem;
+}
+
+.usermgt {
+  background: var(--primary-color);
+  color: var(--white);
+  height: 3rem;
+  padding: 0.5rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.usermgt a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.devise-forms {
+  background: var(--white);
+  padding: 1rem;
+}
+
+input:not([type="submit"]):not([type="checkbox"]) {
+  border: 0;
+  border-bottom: solid 1px var(--neutral-color-1);
+  border-radius: 0;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=text]:focus {
+  outline: none;
+  box-shadow: none;
+  border-bottom: solid 2px var(--primary-color);
+}
+
+.submit-btn {
+  background: var(--accent-color);
+  color: var(--white);
+}
+
+.flat-btn {
+  background: transparent;
+  color: var(--white);
+  border: none;
+  font-size: 1.5rem;
+}
+
+.side-bar {
+  background-image: linear-gradient(var(--primary-color-dark), var(--primary-color));
+  color: var(--white);
+}
+
+.btn-close {
+  color: var(--white) !important;
+}
+
+.offcanvas-body ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+.offcanvas-body ul li {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.offcanvas-body ul li span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 100%;
+  border-bottom: solid 1px var(--accent-color-2);
+  margin-left: 1rem;
+  padding: 0.5rem;
+}
+
+.offcanvas-body ul li i {
+  font-size: 1.5rem;
+}
+
+.dropdown-menu a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.offcanvas-body ul li a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.alert-alert {
+  background-color: #f8d7da;
+  color: #9d595f;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+}
+
+.section-heading {
+  background: var(--accent-color-2);
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+}
+
+.section-content {
+  display: flex;
+  background-color: var(--white);
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.watch-board {
+  margin: 0.6rem;
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  border-radius: 10px;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--white);
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.date-expense {
+  font-size: 0.7rem;
+}
+
+.watch-board-main {
+  margin: 0.2rem 0.6rem 0.6rem 0.6rem;
+}
+
+.list-wrapper {
+  height: 47vh;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.expense-height {
+  height: 68vh !important;
+}
+
+.foot-button {
+  background-color: var(--accent-color);
+  height: 15vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.btn-build {
+  border: solid 1px var(--white);
+  color: var(--white);
+  font-size: 1.5rem;
+  width: 90%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-wrapper ul {
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+}
+
+.list-wrapper ul li {
+  padding: 0.5rem;
+  background: var(--white);
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+}
+
+.move-show {
+  text-decoration: none;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.cat_name {
+  flex: 3;
+  margin-left: 0.8rem;
+}
+
+.delete-item {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-size: 1.3rem;
+  width: 1.5rem;
+  color: var(--primary-color);
+}
+
+.delete-bucket {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-size: 1.3rem;
+  width: 1.5rem;
+  color: var(--red);
+}
+
+.category-watch {
+  background: var(--primary-color);
+  margin: 0;
+  height: 100%;
+  color: var(--white);
+  font-size: 1.2rem;
+}
+
+.category-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.expense {
+  font-size: 0.9rem;
+  margin-top: 0.1rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.dropdown-item:active {
+  background: none;
+}
+
+.dashboard {
+  background: var(--white);
+  width: 100%;
+  border-radius: 10px;
+}
+
+.cast {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.topic {
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.topic-expense {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.side {
+  margin-left: 0.8rem;
+}
+
+.app-logo {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.btn {
+  width: 22rem !important;
+  height: 3.5rem !important;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+}
+
+.login-btn {
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  font-size: 1.2rem;
+}
+
+.login-btn:hover {
+  color: var(--white);
+}
+
+.signup-btn {
+  color: var(--neutral-color-3);
+  font-size: 1.2rem;
+}
+
+.signup-btn:hover {
+  color: var(--neutral-color-3);
+}

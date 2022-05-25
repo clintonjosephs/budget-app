@@ -1,0 +1,41 @@
+<%= render partial: 'devise/shared/devise_top_nav', locals: { page_name: 'Register', path_to_text: '', path_to: '', path_back: user_session_path } %>
+<section class="container devise-forms">
+  <div class="col-md-6 offset-md-3 col-sm-12">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="form-group text-center mb-4" id="img_container">
+      <%= image_tag("default-avatar.jpg", :size => '100x100', style: "border-radius: 50%; margin-bottom: 1rem;", id: 'img_prev') %>
+      <br />
+      <span class="text-muted">Choose an profile picture (if any)</span>
+  </div>
+  <div class="field">
+    <%= f.text_field :name, placeholder: 'full name', autofocus: true, autocomplete: "full name"%>
+  </div>
+  <div class="field">
+    <%= f.email_field :email, placeholder: 'email', autofocus: true, autocomplete: "email"%>
+  </div>
+  <div class="field mb-2">
+    <%= f.password_field :password, autocomplete: "new-password", class: "text-muted", placeholder:'password'%>
+    <% if @minimum_password_length %>
+    <small>(<%= @minimum_password_length %> characters minimum)</small>
+    <% end %><br />
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'confirm password'%>
+  </div>
+
+  <div class="actions">
+  <%= f.file_field :image, id: 'image_picker', onchange: "readURL(this);", style: 'visibility:hidden;' %>
+    <p class="text-muted"> By clicking "Create Account" you agree to our <a href="#!">Terms of use</a> and <a href="#!">Privacy policy</a>.</p>
+    <%= f.submit "Create Account", class: 'btn form-control submit-btn' %>
+  </div>
+<% end %>
+</div>
+</section>
+
+<div class="mt-2 text-center">
+<%= link_to "Din't receive confirmation instructions?", user_confirmation_path, class: "small text-muted fs-6" %>
+</div>
+
+<%= javascript_include_tag 'form_image' %>
