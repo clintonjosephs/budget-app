@@ -11,4 +11,6 @@ class Category < ApplicationRecord
   validates :user_id, presence: true
   validate :image_type
   validate :image_size
+  validates_length_of :name, maximum: 200
+
 end
