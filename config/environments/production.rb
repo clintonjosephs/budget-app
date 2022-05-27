@@ -95,13 +95,13 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'https://clinton-budget-app.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'your heroku url' }
   config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
       :port                 => 587,
       :domain               => "gmail.com",
-      :user_name            => "appdev.techie@gmail.com",
-      :password             => "mypa55port",
+      :user_name            => "youremail@gmail.com",
+      :password             => "yourpassword",
       :authentication       => :plain,
       :enable_starttls_auto => true
   }
